@@ -79,12 +79,19 @@ function decimalToFraction(Dec){
 	var denominatorInteger = parseInt(fractionArray[1]);
 
 	var convertedWholeNumber = wholeNumberInteger*denominatorInteger;
-	var finalNumerator = convertedWholeNumber + numeratorInteger;
+    
+    if(convertedWholeNumber > 0){
+		var finalNumerator = convertedWholeNumber + numeratorInteger;
+    }
+    if(convertedWholeNumber < 0){
+    	var finalNumerator = convertedWholeNumber - numeratorInteger;
+    }
 
 	var finalReducedFraction = finalNumerator + "/" + denominatorInteger;
 
 
 	return finalReducedFraction;
+
 
 }
 
